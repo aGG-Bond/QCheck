@@ -1,5 +1,3 @@
-import Popup from '/assets/js/popup.1.0.js';
-const popup = new Popup();
 // 获取身份证中的出生日期
 function getBirthDate(ID) {
   if (!ID) return;
@@ -106,7 +104,8 @@ function handleStatus({ status, element, errorElement, n: name, length, str }) {
   if (status == 'success') return true;
   element && element.addClass('valid');
   if (!errorElement) {
-    return popup?.msg(text, 2000);
+    console.warn(text);
+    return text;
   } else {
     errorElement.text(text)
     errorElement.addClass('error')
