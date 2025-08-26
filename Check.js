@@ -106,7 +106,7 @@ function handleStatus({ status, element, errorElement, n: name, length, str }) {
   if (status == 'success') return true;
   element && element.addClass('valid');
   if (!errorElement) {
-    popup.msg(text, 2000);
+    return popup?.msg(text, 2000);
   } else {
     errorElement.text(text)
     errorElement.addClass('error')
